@@ -75,6 +75,7 @@ This documents the process of creating a CI pipeline for a Sparta sample node ap
     * Click 'Add Post-Build action' and select 'Git Publisher' from the drop-down menu.
     * Check the boxes marked 'Push Only If Build Succeeds' and 'Merge Results.'
     * Set 'Branch to Push' as 'main' and 'Target remote name' as 'origin'.   
+    * Add another action 'set GitHub commit status'. Leave as default
     ![post build](images/post_build.png)
   * Save changes
 5. Create a webhook. Go to the repository settings on GitHub. Click 'Webhooks' and 'Add Webhook'. Under 'Payload URL' add http://ip:8080/github-webhook/ where ip depends on the jenkins ip address. Change 'Content type' to 'application/json' and select 'Send me everything' for trigger events. Save.      
