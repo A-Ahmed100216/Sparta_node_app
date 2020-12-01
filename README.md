@@ -30,19 +30,20 @@ This documents the process of creating a CI pipeline for a Sparta sample node ap
 ![unit test app](images/unittests.png)  
 
 
-### CI
+### Jenkins CI
 1. Navigate to Jenkins
 2. Login, create a user if necessary
 3. Create a 'new item' and click 'Freestyle Project'.
 4. Proceed to configure the file.
-##### Configuration
+#### Configuration
 * **General**
     * Write a description (optional)
     * Check the box marked 'discard old builds' and set the 'max # of build to keep' to an appropriate value e.g. 2
     * Check the box marked 'GitHub project' and paste the url of your GitHub repository.
     ![general](images/general.png)
   * **Office 365 Connector**
-    * Check the box marked 'restrict where this project can be run' and type sparta-ubuntu-node (N.B Begin typing and this should show in the drop down. It may require re-selecting to get rid of errors.)
+    * Check the box marked 'restrict where this project can be run' and type 'sparta-ubuntu-node' (N.B. Begin typing and this should show in the drop down. It may require re-selecting to get rid of errors.)
+    * Send notifications to Teams via the 'Add a Webhook tab'. The URL can be found by navigating to Microsoft Teams and clicking the options(...) for the channel you wish to send notifications to. From the drop-down, select 'connectors' and then 'Jenkins'. Copy the URL link and paste on Jenkins. The name can be any descriptive name. Select the notifications you wish to receive i.e. successes, failures etc.
     ![office](images/office_365_connector.png)
   * **Source Code Management**    
     * Check the box marked 'Git'          
@@ -78,11 +79,17 @@ This documents the process of creating a CI pipeline for a Sparta sample node ap
   * Save changes
 5. Create a webhook. Go to the repository settings on GitHub. Click 'Webhooks' and 'Add Webhook'. Under 'Payload URL' add http://ip:8080/github-webhook/ where ip depends on the jenkins ip address. Change 'Content type' to 'application/json' and select 'Send me everything' for trigger events. Save.      
 ![webhook](images/webhhooks.png)    
-6. Execute a build by making a change to the code. Ensure the working branch is the Dev branch. This can be checked by running `git branch`. 
+6. Execute a build by making a change to the code. Ensure the working branch is the Dev branch. This can be checked by running `git branch`.
 7. Introduce a failure to ensure the changes are not merged. This can be done by changing one of the tests.
 
 
 ## Testing merges
-Test 1 - Configured file     
-Test 2 - Small change to test to check if failures are not merged     
-Test 3 - revert back to tests passing
+* Test 1 - Configured file to listen to the Dev branch. A notification was sent to Microsoft Teams as shown in the image below.
+![success_notification](images/success.png)
+
+* Test 2 - A small change was made to test to check if failures are not merged. As shown in the image below, changes were not pushed to main.     
+![failed merge](images/failed_merge.png)        
+Likewise the notification sent to Teams notified a failure.   
+![failure notification](images/test2_failure.png)   
+* Test 3 - Reverted back to tests passing which led to successful merges and a successful build notification on Teams.      
+![test3](images/test3_success.png)
