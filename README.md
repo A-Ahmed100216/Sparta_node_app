@@ -16,4 +16,11 @@ This documents the process of creating a CI pipeline for a Sparta sample node ap
 2. Run `vagrant up`
 3. Go to `development.local` or `192.168.10.100`
 
-## Getting setup
+### Running local tests
+1. Run `vagrant up app` and `vagrant up db`
+2. In a separate terminal window, navigate to the tests directory `cd tests/`
+3. Run `rake spec`
+4. Vagrant ssh into the App
+5. Navigate to the app directory `cd /home/ubuntu/app`
+6. Stop the app from running as this will prevent the tests from passing. `pm2 stop app.js`
+6. Run `npm test`
