@@ -35,3 +35,8 @@ This documents the process of creating a CI pipeline for a Sparta sample node ap
 2. Login, create a user if necessary
 3. Create a 'new item' and click 'Freestyle Project'.
 4. Proceed to configure the file.
+
+
+
+## Testing merges
+Test 1 - Configured file 
