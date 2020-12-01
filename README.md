@@ -39,5 +39,6 @@ This documents the process of creating a CI pipeline for a Sparta sample node ap
 
 
 ## Testing merges
-Test 1 - Configured file
-Test 2 - Small change to test to check if failures are not merged 
+Test 1 - Configured file     
+Test 2 - Small change to test to check if failures are not merged     
+Test 3 - revert back to tests passing
