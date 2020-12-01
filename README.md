@@ -24,3 +24,9 @@ This documents the process of creating a CI pipeline for a Sparta sample node ap
 5. Navigate to the app directory `cd /home/ubuntu/app`
 6. Stop the app from running as this will prevent the tests from passing. `pm2 stop app.js`
 6. Run `npm test`
+
+### CI 
+1. Navigate to Jenkins
+2. Login, create a user if necessary
+3. Create a 'new item' and click 'Freestyle Project'.
+5. Proceed to configure the file.
