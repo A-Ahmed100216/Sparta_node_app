@@ -93,5 +93,5 @@ This documents the process of creating a CI pipeline for a Sparta sample node ap
 Likewise the notification sent to Teams notified a failure.   
 ![failure notification](images/test2_failure.png)   
 * Test 3 - Reverted back to tests passing which led to successful merges and a successful build notification on Teams.      
-![test3](images/test3_success.png)
-* Test 4 - Checking 
+![test3](images/test3_success.png)     
+* Test 4 - Checking pipeline
