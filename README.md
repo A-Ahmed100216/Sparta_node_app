@@ -96,4 +96,5 @@ Likewise the notification sent to Teams notified a failure.
 ![test3](images/test3_success.png)     
 * Test 4 - Checking pipeline integration.
 * Test 5
-* Test 6 - Checking failure 
+* Test 6 - Checking failure
+* Test 7 - Fixed failure
