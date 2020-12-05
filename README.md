@@ -94,5 +94,6 @@ Likewise the notification sent to Teams notified a failure.
 ![failure notification](images/test2_failure.png)   
 * Test 3 - Reverted back to tests passing which led to successful merges and a successful build notification on Teams.      
 ![test3](images/test3_success.png)     
-* Test 4 - Checking pipeline integration. 
-* Test 5 -
+* Test 4 - Checking pipeline integration.
+* Test 5
+* Test 6 - Checking failure 
